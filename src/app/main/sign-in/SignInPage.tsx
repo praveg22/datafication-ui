@@ -10,7 +10,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { UserType } from 'app/store/user';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -76,7 +75,7 @@ function SignInPage() {
 	function onSubmit({ email, password }: InferType<typeof schema>) {
 		jwtService
 			.signInWithEmailAndPassword(email, password)
-			.then((user: UserType) => {
+			.then(() => {
 				// Successfully logged in
 				setErrorMessage(null);
 				// setError('root', { type: 'manual', message: '' }); // Clear any previous errors
