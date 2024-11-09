@@ -1,8 +1,8 @@
+import { FuseRouteConfigType } from '@fuse/utils/FuseUtils';
 import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
-import { FuseRouteConfigType } from '@fuse/utils/FuseUtils';
 
-const ClassicSignInPage = lazy(() => import('./ClassicSignInPage'));
+// const ClassicSignInPage = lazy(() => import('./ClassicSignInPage'));
 const ModernSignInPage = lazy(() => import('./ModernSignInPage'));
 const ModernReversedSignInPage = lazy(() => import('./ModernReversedSignInPage'));
 const SplitScreenSignInPage = lazy(() => import('./SplitScreenSignInPage'));
@@ -27,10 +27,10 @@ const signInPagesConfig: FuseRouteConfigType = {
 					path: '',
 					element: <Navigate to="classic" />
 				},
-				{
-					path: 'classic',
-					element: <ClassicSignInPage />
-				},
+				// {
+				// 	path: 'classic',
+				// 	element: <ClassicSignInPage />
+				// },
 				{
 					path: 'modern',
 					element: <ModernSignInPage />

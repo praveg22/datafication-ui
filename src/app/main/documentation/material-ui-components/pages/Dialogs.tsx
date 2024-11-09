@@ -1,10 +1,9 @@
 import FuseExample from '@fuse/core/FuseExample';
-                   import FuseHighlight from '@fuse/core/FuseHighlight';
-                   import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
-                   import Button from '@mui/material/Button';
-                   import Icon from '@mui/material/Icon';
-                   import Typography from '@mui/material/Typography';
-				   import DocumentationPageBreadcrumb from '../../DocumentationPageBreadcrumb';
+import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DocumentationPageBreadcrumb from '../../DocumentationPageBreadcrumb';
                   
                    function DialogsDoc(props) {
                      return (
@@ -181,8 +180,8 @@ This will make the entire dialog draggable.</Typography>
 <Typography className="text-24 mt-24 mb-10 font-700" component="h2">Complementary projects</Typography>
 <Typography className="text-14 mb-32" component="div">For more advanced use cases you might be able to take advantage of:</Typography>
 <Typography className="text-16 mt-20 mb-10 font-700" component="h3">material-ui-confirm</Typography>
-<Typography className="text-14 mb-32" component="div"> src="https://img.shields.io/github/stars/jonatanklosko/material-ui-confirm?style=social&label=Star" alt="stars/>
- src="https://img.shields.io/npm/dm/material-ui-confirm.svg" alt="npm downloads/></Typography>
+{/* <Typography className="text-14 mb-32" component="div"> src="https://img.shields.io/github/stars/jonatanklosko/material-ui-confirm?style=social&label=Star" alt="stars/>
+ src="https://img.shields.io/npm/dm/material-ui-confirm.svg" alt="npm downloads/></Typography> */}
 <Typography className="text-14 mb-32" component="div">The package <a href="https://github.com/jonatanklosko/material-ui-confirm/"><code>{`material-ui-confirm`}</code></a> provides dialogs for confirming user actions without writing boilerplate code.</Typography>
 <Typography className="text-24 mt-24 mb-10 font-700" component="h2">Accessibility</Typography>
 <Typography className="text-14 mb-32" component="div">Follow the <a href="/material-ui/react-modal/#accessibility">Modal accessibility section</a>.</Typography>

@@ -1,10 +1,9 @@
 import FuseExample from '@fuse/core/FuseExample';
-                   import FuseHighlight from '@fuse/core/FuseHighlight';
-                   import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
-                   import Button from '@mui/material/Button';
-                   import Icon from '@mui/material/Icon';
-                   import Typography from '@mui/material/Typography';
-				   import DocumentationPageBreadcrumb from '../../DocumentationPageBreadcrumb';
+import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DocumentationPageBreadcrumb from '../../DocumentationPageBreadcrumb';
                   
                    function PopoverDoc(props) {
                      return (
@@ -97,8 +96,8 @@ This is different from virtual elements used for the <a href="/material-ui/react
 <Typography className="text-24 mt-24 mb-10 font-700" component="h2">Complementary projects</Typography>
 <Typography className="text-14 mb-32" component="div">For more advanced use cases, you might be able to take advantage of:</Typography>
 <Typography className="text-16 mt-20 mb-10 font-700" component="h3">material-ui-popup-state</Typography>
-<Typography className="text-14 mb-32" component="div"> src="https://img.shields.io/github/stars/jcoreio/material-ui-popup-state?style=social&label=Star" alt="stars/>
- src="https://img.shields.io/npm/dm/material-ui-popup-state.svg" alt="npm downloads/></Typography>
+{/* <Typography className="text-14 mb-32" component="div"> src="https://img.shields.io/github/stars/jcoreio/material-ui-popup-state?style=social&label=Star" alt="stars/>
+ src="https://img.shields.io/npm/dm/material-ui-popup-state.svg" alt="npm downloads/></Typography> */}
 <Typography className="text-14 mb-32" component="div">The package <a href="https://github.com/jcoreio/material-ui-popup-state"><code>{`material-ui-popup-state`}</code></a> that takes care of popover state for you in most cases.</Typography>
 <Typography className="text-14 mb-32" component="div"><FuseExample
                     name="PopoverPopupState.js"

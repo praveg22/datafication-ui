@@ -1,10 +1,9 @@
 import FuseExample from '@fuse/core/FuseExample';
-                   import FuseHighlight from '@fuse/core/FuseHighlight';
-                   import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
-                   import Button from '@mui/material/Button';
-                   import Icon from '@mui/material/Icon';
-                   import Typography from '@mui/material/Typography';
-				   import DocumentationPageBreadcrumb from '../../DocumentationPageBreadcrumb';
+import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DocumentationPageBreadcrumb from '../../DocumentationPageBreadcrumb';
                   
                    function TextFieldsDoc(props) {
                      return (
@@ -274,7 +273,7 @@ import { useFormControl } from '@mui/material/FormControl';
 <Typography className="text-14 mb-32" component="div">The input label &quot;shrink&quot; state isn&#39;t always correct.
 The input label is supposed to shrink as soon as the input is displaying something.
 In some circumstances, we can&#39;t determine the &quot;shrink&quot; state (number input, datetime input, Stripe input). You might notice an overlap.</Typography>
-<Typography className="text-14 mb-32" component="div"> src="/material-ui-static/images/text-fields/shrink.png" alt="shrink/></Typography>
+{/* <Typography className="text-14 mb-32" component="div"> src="/material-ui-static/images/text-fields/shrink.png" alt="shrink/></Typography> */}
 <Typography className="text-14 mb-32" component="div">To workaround the issue, you can force the &quot;shrink&quot; state of the label.</Typography>
 
 <FuseHighlight component="pre" className="language-jsx">
