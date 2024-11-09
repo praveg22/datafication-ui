@@ -7,10 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import axios from 'axios';
-import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { BASE_URL } from 'src/app/constants';
 import * as yup from 'yup';
 
 /**
@@ -45,35 +42,35 @@ function ClassicSignInPage() {
 		defaultValues,
 		resolver: yupResolver(schema)
 	});
-	const [errorMessage, setErrorMessage] = useState(null);
+	// const [errorMessage, setErrorMessage] = useState(null);
 
 	const { isValid, dirtyFields, errors } = formState;
 
-	console.log(errors);
+	// console.log(errors);
 
 	// Make `onSubmit` async
-	const onSubmit = async (data: FormType) => {
-		try {
-			const response = await axios.post(`${BASE_URL}/v1/sign-in`, {
-				email: data.email,
-				password: data.password
-			});
-			const { token } = response.data;
-			console.log(response, token);
-			localStorage.setItem('authToken', token);
-			console.log('Logged in successfully');
-			reset(defaultValues);
-			setErrorMessage(null);
-		} catch (error) {
-			const message =
-				error.response && error.response.status === 401
-					? 'Invalid email or password. Please try again.'
-					: 'Something went wrong. Please try again later.';
+	// const onSubmit = async (data: FormType) => {
+	// 	try {
+	// 		const response = await axios.post(`${BASE_URL}/v1/sign-in`, {
+	// 			email: data.email,
+	// 			password: data.password
+	// 		});
+	// 		const { token } = response.data;
+	// 		console.log(response, token);
+	// 		localStorage.setItem('authToken', token);
+	// 		console.log('Logged in successfully');
+	// 		reset(defaultValues);
+	// 		setErrorMessage(null);
+	// 	} catch (error) {
+	// 		const message =
+	// 			error.response && error.response.status === 401
+	// 				? 'Invalid email or password. Please try again.'
+	// 				: 'Something went wrong. Please try again later.';
 
-			setErrorMessage(message);
-			console.error('Login failed:', error.response.data);
-		}
-	};
+	// 		setErrorMessage(message);
+	// 		console.error('Login failed:', error.response.data);
+	// 	}
+	// };
 
 	return (
 		<div className="flex min-w-0 flex-auto flex-col items-center sm:justify-center">
