@@ -1,9 +1,9 @@
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-import AvatarGroup from '@mui/material/AvatarGroup';
 import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 /**
  * The FullScreenConfirmationRequiredPage component.

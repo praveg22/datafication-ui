@@ -1,4 +1,3 @@
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import { yupResolver } from '@hookform/resolvers/yup';
 import _ from '@lodash';
 import Avatar from '@mui/material/Avatar';
@@ -14,7 +13,6 @@ import Typography from '@mui/material/Typography';
 import { UserType } from 'app/store/user';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 import * as yup from 'yup';
 import { InferType } from 'yup';
 import jwtService from '../../auth/services/jwtService';
@@ -107,7 +105,7 @@ function SignInPage() {
 					<Typography className="mt-32 text-4xl font-extrabold leading-tight tracking-tight">
 						Sign in
 					</Typography>
-					<div className="mt-2 flex items-baseline font-medium">
+					{/* <div className="mt-2 flex items-baseline font-medium">
 						<Typography>Don't have an account?</Typography>
 						<Link
 							className="ml-4"
@@ -115,7 +113,7 @@ function SignInPage() {
 						>
 							Sign up
 						</Link>
-					</div>
+					</div> */}
 
 					<div className="mt-4">{errorMessage && <Typography color="error">{errorMessage}</Typography>}</div>
 
@@ -181,12 +179,12 @@ function SignInPage() {
 								)}
 							/>
 
-							<Link
+							{/* <Link
 								className="text-md font-medium"
 								to="/pages/auth/forgot-password"
 							>
 								Forgot password?
-							</Link>
+							</Link> */}
 						</div>
 
 						<Button
@@ -201,7 +199,7 @@ function SignInPage() {
 							Sign in
 						</Button>
 
-						<div className="mt-32 flex items-center">
+						{/* <div className="mt-32 flex items-center">
 							<div className="mt-px flex-auto border-t" />
 							<Typography
 								className="mx-8"
@@ -246,7 +244,7 @@ function SignInPage() {
 									feather:github
 								</FuseSvgIcon>
 							</Button>
-						</div>
+						</div> */}
 					</form>
 				</div>
 			</Paper>
@@ -320,12 +318,15 @@ function SignInPage() {
 				<div className="relative z-10 w-full max-w-2xl">
 					<div className="text-7xl font-bold leading-none text-gray-100">
 						<div>Welcome to</div>
-						<div>our community</div>
+						<div>Datafication community</div>
 					</div>
 					<div className="mt-24 text-lg leading-6 tracking-tight text-gray-400">
+						Transforming everyday interactions and activities into actionable data insights.
+					</div>
+					{/* <div className="mt-24 text-lg leading-6 tracking-tight text-gray-400">
 						Fuse helps developers to build organized and well coded dashboards full of beautiful and rich
 						modules. Join us and start building your application today.
-					</div>
+					</div> */}
 					<div className="mt-32 flex items-center">
 						<AvatarGroup
 							sx={{
@@ -341,7 +342,7 @@ function SignInPage() {
 						</AvatarGroup>
 
 						<div className="ml-16 font-medium tracking-tight text-gray-400">
-							More than 17k people joined us, it's your turn
+							More than 3 clients trust us with their data needs, it's your turn now.
 						</div>
 					</div>
 				</div>
