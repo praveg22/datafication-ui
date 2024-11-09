@@ -14,6 +14,7 @@ import themeLayouts from 'app/theme-layouts/themeLayouts';
 import axios from 'axios';
 import { SnackbarProvider } from 'notistack';
 import { useSelector } from 'react-redux';
+import { BASE_URL } from 'src/app/constants';
 import rtlPlugin from 'stylis-plugin-rtl';
 import { AuthProvider } from './auth/AuthContext';
 import withAppProviders from './withAppProviders';
@@ -22,7 +23,8 @@ import withAppProviders from './withAppProviders';
 /**
  * Axios HTTP Request defaults
  */
-axios.defaults.baseURL = 'http://localhost:5000/';
+// axios.defaults.baseURL = 'http://localhost:5000/';
+axios.defaults.baseURL = BASE_URL;
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 // axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
 

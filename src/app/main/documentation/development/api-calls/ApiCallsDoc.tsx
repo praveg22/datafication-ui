@@ -1,6 +1,7 @@
 import FuseHighlight from '@fuse/core/FuseHighlight';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from 'src/app/constants';
 
 /**
  * Api Calls Doc
@@ -58,10 +59,15 @@ function ApiCallsDoc() {
 				className="language-js"
 			>
 				{`
-					axios.defaults.baseURL = 'http://localhost:5000/';
+					axios.defaults.baseURL = ${BASE_URL};
 					axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 					axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 				`}
+				{/* {`
+					axios.defaults.baseURL = 'http://localhost:5000/';
+					axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+					axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+				`} */}
 				{/* {`
 					axios.defaults.baseURL = 'https://api.example.com';
 					axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
