@@ -1,3 +1,4 @@
+import FuseLoading from '@fuse/core/FuseLoading';
 import FusePageSimple from '@fuse/core/FusePageSimple';
 import { useAppDispatch } from 'app/store';
 import axios from 'axios';
@@ -121,7 +122,11 @@ function AnalyticsDashboardApp() {
 							variants={item}
 							className="xl:col-span-2 flex flex-col flex-auto"
 						>
-							{data?.columns?.length > 0 && <RecentTransactionsWidget analyticsReport={data} />}
+							{data?.columns?.length > 0 ? (
+								<RecentTransactionsWidget analyticsReport={data} />
+							) : (
+								<FuseLoading />
+							)}
 						</motion.div>
 					</div>
 					{/* <Paper className="flex flex-col flex-auto p-24 shadow rounded-2xl overflow-hidden">

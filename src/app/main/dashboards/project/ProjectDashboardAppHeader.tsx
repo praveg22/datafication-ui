@@ -75,12 +75,12 @@ function ProjectDashboardAppHeader() {
 							>
 								heroicons-solid:bell
 							</FuseSvgIcon>
-							<Typography
+							{/* <Typography
 								className="mx-6 leading-6 truncate"
 								color="text.secondary"
 							>
 								You have 2 new messages and 15 new tasks
-							</Typography>
+							</Typography> */}
 						</div>
 					</div>
 				</div>
