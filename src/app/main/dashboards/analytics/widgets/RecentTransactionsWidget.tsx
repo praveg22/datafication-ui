@@ -7,6 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import format from 'date-fns/format';
 import { memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnalyticsReport } from 'src/app/main/dashboards/analytics/AnalyticsDashboardApp';
 // import RecentTransactionsWidgetType from '../types/RecentTransactionsWidgetType';
 
@@ -20,6 +21,7 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 	// const widgets = useAppSelector(selectWidgets);
 	// console.log('analytics', analyticsReport);
 	// const { columns, rows } = widgets.analyticsReport as RecentTransactionsWidgetType;
+	const navigate = useNavigate();
 	const { columns, rows } = analyticsReport;
 	// const columns = ['ID', 'Date', 'Amount', 'Status'];
 	// const rows = [
@@ -48,7 +50,10 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 					<TableHead>
 						<TableRow>
 							{columns.map((column, index) => (
-								<TableCell key={index}>
+								<TableCell
+									key={index}
+									style={{ textAlign: 'left', width: `${100 / columns.length}%` }}
+								>
 									<Typography
 										color="text.secondary"
 										className="font-semibold text-12 whitespace-nowrap"
@@ -64,6 +69,113 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 						{rows.map((row, index) => (
 							<TableRow key={index}>
 								{Object.entries(row).map(([key, value]) => {
+									if (key === 'reportName') {
+										return (
+											<TableCell
+												key={key}
+												component="th"
+												scope="row"
+											>
+												{/* <Typography color="text.secondary">
+													<a href={row.reportLink || '#'}>{value}</a>
+												</Typography> */}
+												<Typography color="text.secondary">
+													<span
+														style={{
+															cursor: 'pointer',
+															color: '#007bff',
+															textDecoration: 'underline'
+														}}
+														onClick={() => {
+															if (row.reportLink) {
+																navigate('/dashboards/analytics/report', {
+																	state: { reportLink: row.reportLink }
+																});
+															}
+														}}
+														onKeyDown={(event) => {
+															if (event.key === 'Enter' || event.key === ' ') {
+																event.preventDefault();
+																if (row.reportLink) {
+																	navigate('/dashboards/analytics/report', {
+																		state: { reportLink: row.reportLink }
+																	});
+																}
+															}
+														}}
+														role="link"
+														tabIndex={0} // Makes the span focusable
+													>
+														{value}
+													</span>
+													{/* <span
+														style={{
+															cursor: 'pointer',
+															color: '#007bff',
+															textDecoration: 'underline'
+														}}
+														onClick={() => {
+															if (row.reportLink) {
+																navigate('/dashboards/analytics/report', {
+																	state: { reportLink: row.reportLink }
+																});
+															}
+															// if (row.reportLink) {
+															// 	const reportId = new URL(row.reportLink).pathname
+															// 		.split('/')
+															// 		.pop(); // Extract report ID
+															// 	navigate(`/dashboards/analytics/${reportId}`);
+															// }
+														}}
+													>
+														{value}
+													</span> */}
+												</Typography>
+											</TableCell>
+										);
+									}
+									if (key === 'reportDate') {
+										return (
+											<TableCell
+												key={key}
+												component="th"
+												scope="row"
+											>
+												<Typography>{format(new Date(value), 'MMM dd, y')}</Typography>
+											</TableCell>
+										);
+									}
+									if (key === 'downloadFile') {
+										return (
+											<TableCell
+												key={key}
+												component="th"
+												scope="row"
+											>
+												<Typography>
+													<a
+														href={value}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="no-link-style"
+													>
+														Download
+													</a>
+												</Typography>
+											</TableCell>
+										);
+									}
+									// Optionally log unexpected keys
+									// console.warn(`Unhandled key: ${key}`);
+									return null; // Skip rendering for unknown keys
+								})}
+							</TableRow>
+						))}
+					</TableBody>
+					{/* <TableBody>
+						{rows.map((row, index) => (
+							<TableRow key={index}>
+								{Object.entries(row).map(([key, value]) => {
 									switch (key) {
 										case 'reportName': {
 											return (
@@ -72,7 +184,9 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 													component="th"
 													scope="row"
 												>
-													<Typography color="text.secondary">{value}</Typography>
+													<Typography color="text.secondary">
+														<a href={row.reportLink || '#'}>{value}</a>
+													</Typography>
 												</TableCell>
 											);
 										}
@@ -95,7 +209,13 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 													scope="row"
 												>
 													<Typography>
-														<a href={value}>Download</a>
+														<a
+															href={value}
+															target="_blank"
+															rel="noopener noreferrer"
+														>
+															Download
+														</a>
 													</Typography>
 												</TableCell>
 											);
@@ -128,7 +248,7 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 													component="th"
 													scope="row"
 												>
-													<Typography>{value}</Typography>
+													<Typography />
 												</TableCell>
 											);
 										}
@@ -136,7 +256,7 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 								})}
 							</TableRow>
 						))}
-					</TableBody>
+					</TableBody> */}
 				</Table>
 				{/* <div className="pt-24">
 					<Button variant="outlined">See all transactions</Button>

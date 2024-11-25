@@ -32,9 +32,11 @@ export type AnalyticsReport = {
 };
 
 type Report = {
+	reportId: string;
 	reportName: string;
 	reportDate: string;
 	downloadFile: string;
+	reportLink: string;
 };
 
 // export type WidgetsType = {

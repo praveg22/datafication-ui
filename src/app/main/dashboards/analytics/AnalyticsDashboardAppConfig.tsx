@@ -1,4 +1,5 @@
 import lazyWithReducer from 'app/store/lazyWithReducer';
+import PowerBIReport from 'src/app/main/dashboards/analytics/powerbi-report/PowerBIReport';
 import reducer from './store';
 
 const AnalyticsDashboardApp = lazyWithReducer(
@@ -20,6 +21,10 @@ const AnalyticsDashboardAppConfig = {
 		{
 			path: 'dashboards/analytics',
 			element: <AnalyticsDashboardApp />
+		},
+		{
+			path: 'dashboards/analytics/report',
+			element: <PowerBIReport />
 		}
 	]
 };
