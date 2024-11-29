@@ -68,20 +68,20 @@ function ProjectDashboardAppHeader() {
 							{`Welcome back, ${user.data.displayName}!`}
 						</Typography>
 
-						<div className="flex items-center">
+						{/* <div className="flex items-center">
 							<FuseSvgIcon
 								size={20}
 								color="action"
 							>
 								heroicons-solid:bell
 							</FuseSvgIcon>
-							{/* <Typography
+							<Typography
 								className="mx-6 leading-6 truncate"
 								color="text.secondary"
 							>
 								You have 2 new messages and 15 new tasks
-							</Typography> */}
-						</div>
+							</Typography>
+						</div> */}
 					</div>
 				</div>
 				{/* <div className="flex items-center mt-24 sm:mt-0 sm:mx-8 space-x-12">

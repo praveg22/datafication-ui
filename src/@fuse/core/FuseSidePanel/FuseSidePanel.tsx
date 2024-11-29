@@ -1,9 +1,9 @@
 import FuseScrollbars from '@fuse/core/FuseScrollbars';
-import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Tooltip from '@mui/material/Tooltip';
 import clsx from 'clsx';

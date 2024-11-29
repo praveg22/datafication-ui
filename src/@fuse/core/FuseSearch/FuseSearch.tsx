@@ -1,5 +1,6 @@
+import _ from '@lodash';
+import { PopperOwnProps } from '@mui/base/Popper';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
-import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -9,18 +10,17 @@ import Popper from '@mui/material/Popper';
 import TextField from '@mui/material/TextField';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import clsx from 'clsx';
-import _ from '@lodash';
-import { memo, useEffect, useReducer, useRef, ReactNode } from 'react';
-import Autosuggest, { RenderInputComponentProps, RenderSuggestionParams, ChangeEvent } from 'react-autosuggest';
-import { useNavigate } from 'react-router-dom';
 import * as React from 'react';
-import { PopperOwnProps } from '@mui/base/Popper';
-import FuseSvgIcon from '../FuseSvgIcon';
+import { memo, ReactNode, useEffect, useReducer, useRef } from 'react';
+import Autosuggest, { ChangeEvent, RenderInputComponentProps, RenderSuggestionParams } from 'react-autosuggest';
+import { useNavigate } from 'react-router-dom';
 import { FuseNavItemType } from '../FuseNavigation/types/FuseNavItemType';
 import { FuseNavigationType } from '../FuseNavigation/types/FuseNavigationType';
+import FuseSvgIcon from '../FuseSvgIcon';
 
 const Root = styled('div')(({ theme }) => ({
 	'& .FuseSearch-container': {
@@ -224,6 +224,7 @@ function reducer(state: StateType, action: ActionType): StateType {
 			};
 		}
 		case 'setNavigation': {
+			console.log('----------', action);
 			return {
 				...state,
 				navigation: action.data

@@ -26,6 +26,8 @@ function Logo() {
 				src="assets/images/logo/logo.svg"
 				alt="logo"
 			/>
+			<span className="text-2xl ml-2 font-bold leading-tight tracking-tight">Datafication</span>
+			{/* <Typography className="mt-32 text-4xl font-extrabold leading-tight tracking-tight">Sign in</Typography> */}
 			{/* <div
 				className="badge mx-8 flex items-center rounded px-8 py-4"
 				style={{ backgroundColor: '#121212', color: '#61DAFB' }}

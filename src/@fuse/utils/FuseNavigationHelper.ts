@@ -1,8 +1,8 @@
-import { FuseNavigationType } from '@fuse/core/FuseNavigation/types/FuseNavigationType';
-import UserType from 'app/store/user/UserType';
-import { FuseNavItemType } from '@fuse/core/FuseNavigation/types/FuseNavItemType';
 import FuseNavItemModel from '@fuse/core/FuseNavigation/models/FuseNavItemModel';
+import { FuseNavigationType } from '@fuse/core/FuseNavigation/types/FuseNavigationType';
+import { FuseNavItemType } from '@fuse/core/FuseNavigation/types/FuseNavItemType';
 import _ from '@lodash';
+import UserType from 'app/store/user/UserType';
 import { PartialDeep } from 'type-fest';
 
 class FuseNavigationHelper {

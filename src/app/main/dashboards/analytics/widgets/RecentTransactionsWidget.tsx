@@ -22,6 +22,7 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 	// console.log('analytics', analyticsReport);
 	// const { columns, rows } = widgets.analyticsReport as RecentTransactionsWidgetType;
 	const navigate = useNavigate();
+	// const [selectedReportLink, setSelectedReportLink] = useState<string | null>(null);
 	const { columns, rows } = analyticsReport;
 	// const columns = ['ID', 'Date', 'Amount', 'Status'];
 	// const rows = [
@@ -30,6 +31,38 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 	// 	{ id: 2, date: '2023-10-02', amount: 200, status: 'pending' }
 	// ];
 	// console.log('columns', columns, rows);
+
+	// if (selectedReportLink) {
+	// 	return (
+	// 		<div
+	// 			className="iframe-container"
+	// 			style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1000 }}
+	// 		>
+	// 			<iframe
+	// 				src={selectedReportLink}
+	// 				width="100%"
+	// 				height="100%"
+	// 				style={{ border: 'none' }}
+	// 				title="PowerBI Report"
+	// 			/>
+	// 			<button
+	// 				onClick={() => setSelectedReportLink(null)}
+	// 				style={{
+	// 					position: 'absolute',
+	// 					top: '10px',
+	// 					right: '10px',
+	// 					zIndex: 1001,
+	// 					backgroundColor: 'white',
+	// 					border: '1px solid #ccc',
+	// 					padding: '10px',
+	// 					cursor: 'pointer'
+	// 				}}
+	// 			>
+	// 				Close
+	// 			</button>
+	// 		</div>
+	// 	);
+	// }
 
 	return (
 		<Paper className="flex flex-col flex-auto p-24 shadow rounded-2xl overflow-hidden">
@@ -86,6 +119,11 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 															color: '#007bff',
 															textDecoration: 'underline'
 														}}
+														// onClick={() => {
+														// 	if (row.reportLink) {
+														// 		setSelectedReportLink(row.reportLink);
+														// 	}
+														// }}
 														onClick={() => {
 															if (row.reportLink) {
 																navigate('/dashboards/analytics/report', {
@@ -96,6 +134,9 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 														onKeyDown={(event) => {
 															if (event.key === 'Enter' || event.key === ' ') {
 																event.preventDefault();
+																// if (row.reportLink) {
+																// 	setSelectedReportLink(row.reportLink);
+																// }
 																if (row.reportLink) {
 																	navigate('/dashboards/analytics/report', {
 																		state: { reportLink: row.reportLink }
@@ -262,6 +303,20 @@ function RecentTransactionsWidget({ analyticsReport }: RecentTransactionsWidgetP
 					<Button variant="outlined">See all transactions</Button>
 				</div> */}
 			</div>
+			{/* {selectedReportLink && (
+				<div
+					className="iframe-container"
+					style={{ marginTop: '24px' }}
+				>
+					<iframe
+						src={selectedReportLink}
+						width="100%"
+						height="600px"
+						style={{ border: 'none' }}
+						title="PowerBI Report"
+					/>
+				</div>
+			)} */}
 		</Paper>
 	);
 }

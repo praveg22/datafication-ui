@@ -20,27 +20,27 @@ const navigationConfig: FuseNavigationType = [
 		icon: 'heroicons-outline:home',
 		translate: 'DASHBOARDS',
 		children: [
-			{
-				id: 'dashboards.project',
-				title: 'Project',
-				type: 'item',
-				icon: 'heroicons-outline:clipboard-check',
-				url: '/dashboards/project'
-			},
+			// {
+			// 	id: 'dashboards.project',
+			// 	title: 'Project',
+			// 	type: 'item',
+			// 	icon: 'heroicons-outline:clipboard-check',
+			// 	url: '/dashboards/project'
+			// },
 			{
 				id: 'dashboards.analytics',
 				title: 'Analytics',
 				type: 'item',
 				icon: 'heroicons-outline:chart-pie',
 				url: '/dashboards/analytics'
-			},
-			{
-				id: 'dashboards.finance',
-				title: 'Finance',
-				type: 'item',
-				icon: 'heroicons-outline:cash',
-				url: '/dashboards/finance'
 			}
+			// {
+			// 	id: 'dashboards.finance',
+			// 	title: 'Finance',
+			// 	type: 'item',
+			// 	icon: 'heroicons-outline:cash',
+			// 	url: '/dashboards/finance'
+			// }
 			// {
 			// 	id: 'dashboards.crypto',
 			// 	title: 'Crypto',

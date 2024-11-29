@@ -1,14 +1,14 @@
-import { createEntityAdapter, createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunkType, RootStateType } from 'app/store/types';
-import { PartialDeep } from 'type-fest';
+import FuseNavItemModel from '@fuse/core/FuseNavigation/models/FuseNavItemModel';
 import { FuseNavItemType } from '@fuse/core/FuseNavigation/types/FuseNavItemType';
 import { FuseNavigationType } from '@fuse/core/FuseNavigation/types/FuseNavigationType';
-import { selectUserRole, userSliceType } from 'app/store/user/userSlice';
-import FuseNavigationHelper from '@fuse/utils/FuseNavigationHelper';
-import i18next from 'i18next';
-import FuseNavItemModel from '@fuse/core/FuseNavigation/models/FuseNavItemModel';
 import FuseUtils from '@fuse/utils';
+import FuseNavigationHelper from '@fuse/utils/FuseNavigationHelper';
+import { createEntityAdapter, createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import navigationConfig from 'app/configs/navigationConfig';
+import { AppThunkType, RootStateType } from 'app/store/types';
+import { selectUserRole, userSliceType } from 'app/store/user/userSlice';
+import i18next from 'i18next';
+import { PartialDeep } from 'type-fest';
 import { selectCurrentLanguageId } from '../i18nSlice';
 
 type AppRootStateType = RootStateType<[navigationSliceType, userSliceType]>;

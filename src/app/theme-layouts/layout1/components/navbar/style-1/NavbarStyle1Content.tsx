@@ -4,8 +4,8 @@ import clsx from 'clsx';
 import { memo } from 'react';
 import Logo from '../../../../shared-components/Logo';
 import NavbarToggleButton from '../../../../shared-components/NavbarToggleButton';
-import UserNavbarHeader from '../../../../shared-components/UserNavbarHeader';
 import Navigation from '../../../../shared-components/Navigation';
+import UserNavbarHeader from '../../../../shared-components/UserNavbarHeader';
 
 const Root = styled('div')(({ theme }) => ({
 	backgroundColor: theme.palette.background.default,

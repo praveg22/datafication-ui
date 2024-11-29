@@ -1,3 +1,4 @@
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -5,11 +6,10 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import { selectUser } from 'app/store/user/userSlice';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
-import { selectUser } from 'app/store/user/userSlice';
 
 /**
  * The user menu.
@@ -102,7 +102,7 @@ function UserMenu() {
 					</>
 				) : (
 					<>
-						<MenuItem
+						{/* <MenuItem
 							component={Link}
 							to="/apps/profile"
 							onClick={userMenuClose}
@@ -112,8 +112,8 @@ function UserMenu() {
 								<FuseSvgIcon>heroicons-outline:user-circle</FuseSvgIcon>
 							</ListItemIcon>
 							<ListItemText primary="My Profile" />
-						</MenuItem>
-						<MenuItem
+						</MenuItem> */}
+						{/* <MenuItem
 							component={Link}
 							to="/apps/mailbox"
 							onClick={userMenuClose}
@@ -123,7 +123,7 @@ function UserMenu() {
 								<FuseSvgIcon>heroicons-outline:mail-open</FuseSvgIcon>
 							</ListItemIcon>
 							<ListItemText primary="Inbox" />
-						</MenuItem>
+						</MenuItem> */}
 						<MenuItem
 							component={NavLink}
 							to="/sign-out"
