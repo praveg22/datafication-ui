@@ -224,7 +224,6 @@ function reducer(state: StateType, action: ActionType): StateType {
 			};
 		}
 		case 'setNavigation': {
-			console.log('----------', action);
 			return {
 				...state,
 				navigation: action.data
